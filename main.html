@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>おみくじ</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="button.css">
+</head>
+<body>
+  <div class="center">
+    <a href="#" class="cp_btn" onclick="fortune()">Start!</a>
+  </div>
+  <div class="parent">
+    <div class="inner">
+      <span id="demo4">
+    </div>
+ </div>
+  <script>
+
+      function fortune() {
+
+        demo4.style.display="block";
+        rand = rand = Math.floor(Math.random()*100);
+        img = '<img id = "biyon-tate" src = "image/大吉.png">'; 
+        if (rand > 9) img = '<img id = "biyon-tate" src = "image/中吉.png">'; 
+        if (rand > 29) img = '<img id = "biyon-tate" src = "image/小吉.png">';  
+        if (rand > 89) img = '<img id = "biyon-tate" src = "image/大凶.png">'; 
+
+
+        document.getElementById('demo4').innerHTML = img;
+        
+        var fadeout = function(){
+          document.getElementById("demo4").style.display ="none";
+        } 
+
+        setTimeout(fadeout, 5000);
+        }
+　</script>
+</body>
+</html>
